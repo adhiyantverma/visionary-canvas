@@ -1,88 +1,64 @@
-import { motion } from "framer-motion";
-import { useInView } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
+import { Button } from "@/components/ui/button";
+import heroImage from "@/assets/hero-agency.jpg";
 
-interface HeroSectionProps {
-  image: string;
-  headline: string;
-  subtitle?: string;
-  links?: { label: string; href?: string }[];
-  dark?: boolean;
-  id?: string;
-}
-
-const HeroSection = ({ image, headline, subtitle, links, dark, id }: HeroSectionProps) => {
+const HeroSection = () => {
   const ref = useRef(null);
-  const inView = useInView(ref, { once: true, margin: "-100px" });
+  const inView = useInView(ref, { once: true });
 
   return (
-    <section
-      id={id}
-      className="section-full relative"
-      ref={ref}
-    >
-      {/* Background image */}
+    <section ref={ref} className="relative min-h-[75vh] flex items-center justify-center overflow-hidden">
       <div className="absolute inset-0">
-        <img
-          src={image}
-          alt=""
-          className="w-full h-full object-cover"
-          loading="lazy"
-        />
-        {/* Gradient overlay for text visibility */}
+        <img src={heroImage} alt="" className="w-full h-full object-cover" />
         <div
           className="absolute inset-0"
           style={{
-            background: dark
-              ? "linear-gradient(180deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.5) 40%, rgba(0,0,0,0.3) 100%)"
-              : "linear-gradient(180deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.4) 40%, rgba(0,0,0,0.2) 100%)",
+            background:
+              "linear-gradient(135deg, hsla(222,68%,20%,0.85) 0%, hsla(260,50%,25%,0.75) 100%)",
           }}
         />
       </div>
 
-      {/* Content */}
-      <div className="relative z-10 text-center px-6 max-w-3xl">
+      <div className="relative z-10 section-container text-center py-32">
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
-          className="hero-headline text-white"
-          style={{ textShadow: "0 2px 20px rgba(0,0,0,0.5)" }}
+          transition={{ duration: 0.7 }}
+          className="heading-1 text-white max-w-4xl mx-auto"
         >
-          {headline}
+          Strategic Design Solutions for Modern Businesses
         </motion.h1>
-
-        {subtitle && (
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={inView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="mt-4 hero-subtitle text-white/80"
-            style={{ textShadow: "0 1px 10px rgba(0,0,0,0.4)" }}
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.7, delay: 0.15 }}
+          className="body-lg text-white/75 mt-6 max-w-2xl mx-auto"
+        >
+          We craft beautiful websites, wedding invitations, and restaurant branding that elevate your brand and drive real results.
+        </motion.p>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.7, delay: 0.3 }}
+          className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4"
+        >
+          <Button
+            size="lg"
+            className="rounded-full px-8 bg-white text-foreground hover:bg-white/90 font-semibold"
+            onClick={() => document.getElementById("portfolio")?.scrollIntoView({ behavior: "smooth" })}
           >
-            {subtitle}
-          </motion.p>
-        )}
-
-        {links && links.length > 0 && (
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={inView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="mt-6 flex items-center justify-center gap-8"
+            View Our Work
+          </Button>
+          <Button
+            size="lg"
+            variant="outline"
+            className="rounded-full px-8 border-white/40 text-white hover:bg-white/10 font-semibold"
+            onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
           >
-            {links.map((link) => (
-              <a
-                key={link.label}
-                href={link.href || "#"}
-                className="text-xl font-normal transition-opacity hover:opacity-70 text-white/90"
-                style={{ textShadow: "0 1px 8px rgba(0,0,0,0.3)" }}
-              >
-                {link.label} ›
-              </a>
-            ))}
-          </motion.div>
-        )}
+            Get Started
+          </Button>
+        </motion.div>
       </div>
     </section>
   );
