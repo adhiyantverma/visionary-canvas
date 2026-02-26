@@ -29,12 +29,14 @@ const HeroSection = ({ image, headline, subtitle, links, dark, id }: HeroSection
           className="w-full h-full object-cover"
           loading="lazy"
         />
+        {/* Gradient overlay for text visibility */}
         <div
-          className={`absolute inset-0 ${
-            dark
-              ? "bg-foreground/60"
-              : "bg-background/40"
-          }`}
+          className="absolute inset-0"
+          style={{
+            background: dark
+              ? "linear-gradient(180deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.5) 40%, rgba(0,0,0,0.3) 100%)"
+              : "linear-gradient(180deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.4) 40%, rgba(0,0,0,0.2) 100%)",
+          }}
         />
       </div>
 
@@ -44,7 +46,8 @@ const HeroSection = ({ image, headline, subtitle, links, dark, id }: HeroSection
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
-          className={`hero-headline ${dark ? "text-primary-foreground" : "text-foreground"}`}
+          className="hero-headline text-white"
+          style={{ textShadow: "0 2px 20px rgba(0,0,0,0.5)" }}
         >
           {headline}
         </motion.h1>
@@ -54,7 +57,8 @@ const HeroSection = ({ image, headline, subtitle, links, dark, id }: HeroSection
             initial={{ opacity: 0, y: 20 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className={`mt-4 hero-subtitle ${dark ? "text-primary-foreground/70" : ""}`}
+            className="mt-4 hero-subtitle text-white/80"
+            style={{ textShadow: "0 1px 10px rgba(0,0,0,0.4)" }}
           >
             {subtitle}
           </motion.p>
@@ -71,9 +75,8 @@ const HeroSection = ({ image, headline, subtitle, links, dark, id }: HeroSection
               <a
                 key={link.label}
                 href={link.href || "#"}
-                className={`text-xl font-normal transition-opacity hover:opacity-70 ${
-                  dark ? "text-primary-foreground" : "text-apple-link"
-                }`}
+                className="text-xl font-normal transition-opacity hover:opacity-70 text-white/90"
+                style={{ textShadow: "0 1px 8px rgba(0,0,0,0.3)" }}
               >
                 {link.label} ›
               </a>

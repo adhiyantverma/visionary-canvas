@@ -81,12 +81,16 @@
   }
 
   .hero-headline {
-    @apply text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extralight tracking-tight leading-tight;
+    @apply text-4xl sm:text-5xl md:text-6xl lg:text-7xl tracking-tight leading-tight;
+    font-weight: 300;
+    letter-spacing: -0.5px;
+    line-height: 1.1;
   }
 
   .hero-subtitle {
-    @apply text-lg sm:text-xl md:text-2xl font-light tracking-normal;
-    color: hsl(var(--apple-text-secondary));
+    @apply text-lg sm:text-xl md:text-2xl tracking-normal;
+    font-weight: 300;
+    line-height: 1.6;
   }
 
   .apple-link {
