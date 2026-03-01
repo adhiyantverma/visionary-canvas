@@ -131,7 +131,7 @@ const ContactSection = () => {
             </p>
             <div className="space-y-4 text-muted-foreground">
               <p>📧 hello@cre8tive.studio</p>
-              <p>📞 +1 (555) 123-4567</p>
+              <p>📞 +61413611147</p>
               <p>📍 Remote — working with clients worldwide</p>
             </div>
           </motion.div>
