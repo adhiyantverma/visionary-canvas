@@ -60,6 +60,19 @@ This project is built with:
 - shadcn-ui
 - Tailwind CSS
 
+## Contact form (Let's Talk)
+
+The contact form uses [Formspree](https://formspree.io) so submissions are emailed to you without a backend server.
+
+1. Sign up at [formspree.io](https://formspree.io).
+2. Create a new form and set the notification email to your address (e.g. `adhiyantverma00623@gmail.com`).
+3. Copy your form ID from the form endpoint (e.g. from `https://formspree.io/f/xyzabc` the ID is `xyzabc`).
+4. Copy `.env.example` to `.env` and set:
+   ```bash
+   VITE_FORMSPREE_FORM_ID=xyzabc
+   ```
+5. Restart the dev server. Submissions will be sent to your Formspree email.
+
 ## How can I deploy this project?
 
 Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
