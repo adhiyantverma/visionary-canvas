@@ -34,7 +34,7 @@ const Navbar = () => {
               scrolled ? "text-foreground" : "text-white"
             }`}
           >
-            Cre8tive
+            Cre8tive StuDio
           </button>
 
           <div className="hidden md:flex items-center gap-8">
