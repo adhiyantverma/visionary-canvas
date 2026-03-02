@@ -12,7 +12,7 @@ const Footer = () => (
     <div className="section-container">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 mb-14">
         <div className="lg:col-span-2">
-          <h4 className="text-xl font-bold text-white mb-3">Cre8tive</h4>
+          <h4 className="text-xl font-bold text-white mb-3">WebNest</h4>
           <p className="text-sm leading-relaxed mb-6 max-w-xs">
             Strategic design solutions for modern businesses, beautiful weddings, and unforgettable dining experiences.
           </p>
@@ -42,7 +42,7 @@ const Footer = () => (
       </div>
 
       <div className="border-t border-white/10 pt-6 flex flex-col md:flex-row items-center justify-between gap-4">
-        <p className="text-xs">© {new Date().getFullYear()} Cre8tive Studio. All rights reserved.</p>
+        <p className="text-xs">© {new Date().getFullYear()} WebNest. All rights reserved.</p>
         <div className="flex gap-6">
           <a href="#" className="text-xs hover:text-white transition-colors">Privacy Policy</a>
           <a href="#" className="text-xs hover:text-white transition-colors">Terms of Service</a>

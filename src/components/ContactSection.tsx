@@ -130,7 +130,7 @@ const ContactSection = () => {
               Tell us about your project and we'll get back to you within 24 hours.
             </p>
             <div className="space-y-4 text-muted-foreground">
-              <p>📧 hello@cre8tive.studio</p>
+              <p>📧 Adhiyantverma00623@gmail.com</p>
               <p>📞 +61413611147</p>
               <p>📍 Remote — working with clients worldwide</p>
             </div>

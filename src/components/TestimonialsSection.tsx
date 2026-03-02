@@ -4,8 +4,8 @@ import { Star, ChevronLeft, ChevronRight } from "lucide-react";
 
 const testimonials = [
   {
-    quote: "Cre8tive transformed our online presence. The website they built exceeded every expectation — clean, fast, and beautiful.",
-    name: "Amira Hassan",
+    quote: "WebNest transformed our online presence. The website they built exceeded every expectation — clean, fast, and beautiful.",
+    name: "Julia Roberts",
     role: "Founder",
     company: "Artisan Co.",
     rating: 5,
